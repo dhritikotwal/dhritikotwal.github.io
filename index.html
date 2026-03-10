@@ -7,119 +7,176 @@
 
 <title>Dhriti Kotwal</title>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-    margin:0;
-    font-family: "Segoe UI", sans-serif;
-    background:#0f172a;
-    color:white;
+margin:0;
+font-family:"Segoe UI",sans-serif;
+background:#020617;
+color:white;
+}
+
+/* STAR BACKGROUND */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:#020617;
 }
 
 /* NAVBAR */
 
 nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    background:#020617;
-    position:sticky;
-    top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#020617;
+position:sticky;
+top:0;
+backdrop-filter:blur(10px);
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
+color:white;
+text-decoration:none;
+margin-left:25px;
 }
 
 nav a:hover{
-    color:#38bdf8;
+color:#38bdf8;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
-    height:80vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
 .hero h1{
-    font-size:48px;
+font-size:60px;
+letter-spacing:2px;
+background:linear-gradient(90deg,#38bdf8,#a78bfa,#38bdf8);
+background-size:200% auto;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glowText 6s linear infinite;
 }
 
 .hero p{
-    font-size:20px;
-    color:#94a3b8;
+font-size:22px;
+color:#cbd5f5;
+}
+
+@keyframes glowText{
+
+0%{background-position:0%;}
+100%{background-position:200%;}
+
 }
 
 /* BUTTON */
 
 button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    background:#38bdf8;
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
+margin-top:30px;
+padding:14px 28px;
+border:none;
+border-radius:10px;
+background:linear-gradient(45deg,#38bdf8,#a78bfa);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    background:#0ea5e9;
+transform:scale(1.08);
+box-shadow:0 0 15px rgba(56,189,248,0.7);
 }
 
 /* SECTIONS */
 
 section{
-    padding:80px 20%;
+padding:90px 20%;
 }
 
 h2{
-    border-bottom:2px solid #38bdf8;
-    display:inline-block;
+border-bottom:2px solid #38bdf8;
+display:inline-block;
+}
+
+/* PROFILE IMAGE */
+
+.profile{
+width:180px;
+border-radius:50%;
+margin-top:20px;
 }
 
 /* PROJECT CARDS */
 
 .card-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
 .card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
-    transition:0.3s;
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
 }
 
 .card:hover{
-    transform:scale(1.05);
+transform:scale(1.05);
+}
+
+/* IMAGE GALLERY */
+
+.gallery{
+display:flex;
+gap:20px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:250px;
+border-radius:10px;
 }
 
 /* FOOTER */
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
+text-align:center;
+padding:30px;
+background:#020617;
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVBAR -->
+<div id="particles-js"></div>
 
 <nav>
 
@@ -129,6 +186,9 @@ footer{
 <a href="#about">About</a>
 <a href="#research">Research</a>
 <a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#social">Extracurricular and Social Work</a>
+<a href="#courses">Courses</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -141,7 +201,7 @@ footer{
 
 <h1>Dhriti Kotwal</h1>
 
-<p>BS-MS Student | Astrophysics Enthusiast</p>
+<p>BS-MS Student | Astrophysics and Cosmology Enthusiast</p>
 
 <button onclick="scrollToSection()">Explore My Work</button>
 
@@ -154,9 +214,17 @@ footer{
 
 <h2>About Me</h2>
 
+<br>
+
+<img src="assets/images/profile.jpg" class="profile">
+
 <p>
-I am a third-year BS-MS student at the UM-DAE Centre for Excellence in Basic Sciences, Mumbai.
-My research interests include astrophysical magnetic fields, exoplanetary atmospheres, and space weather.
+I am a third-year BS-MS student at the UM-DAE Centre for Excellence in Basic Sciences (CEBS), Mumbai.
+I am interested in cosmology and astrophysics, particularly the study of cosmological probes such as the cosmic microwave background and Type Ia supernovae. I am also interested in gravitational lensing and spacetime-related phenomena. Additionally, I enjoy exploring planetary and stellar atmospheres and their role in determining habitability.
+</p>
+
+<p>
+<a href="assets/documents/cv.pdf" target="_blank">Download CV</a>
 </p>
 
 </section>
@@ -170,11 +238,10 @@ My research interests include astrophysical magnetic fields, exoplanetary atmosp
 
 <ul>
 
-<li>Astrophysical Magnetic Fields</li>
-<li>Exoplanets and Exoplanetary Atmospheres</li>
-<li>Solar and Planetary Winds</li>
-<li>Space Weather</li>
 <li>Cosmic Microwave Background</li>
+<li>Exoplanetary Atmospheres</li>
+<li>Supernovae</li>
+<li>Theoretical Plasma Astrophysics</li>
 
 </ul>
 
@@ -185,23 +252,29 @@ My research interests include astrophysical magnetic fields, exoplanetary atmosp
 
 <section id="projects">
 
-<h2>Projects</h2>
+<h2>Research Projects</h2>
 
 <div class="card-container">
-
+    
 <div class="card">
-<h3>Feigenbaum Chaos Circuit</h3>
-<p>Experimental study of bifurcation and chaotic dynamics using nonlinear circuits.</p>
+<h3>General Relativity - UM -DAE CEBS Mumbai</h3>
+<p>Ongoing reading project under Dr. Bhooshan Paradkar.</p>
+</div>
+    
+<div class="card">
+<h3>Cosmic Energy Budget – IIA Bangalore</h3>
+<p>2025 Summer research project under Dr. Suvedha Naik.</p>
+<a href="assets/documents/project_report.pdf">View Report</a>
 </div>
 
 <div class="card">
-<h3>Equipotential Surfaces Experiment</h3>
-<p>Mapping potential surfaces using conductive media and electric probes.</p>
+<h3>2024 Statistical Physics Project – IIT Jammu</h3>
+<p>Summer research project under Prof. Venkata Sathish Akella.</p>
 </div>
 
 <div class="card">
-<h3>Quantum Barrier Simulation</h3>
-<p>Python simulation of reflection and transmission through a rectangular potential barrier.</p>
+<h3>Cosmology and Modern Technology</h3>
+<p>Ongoing Field Project: A documentary based on themes discussed in a public lecture by Prof. Brian Schmidt at IISc, Bangalore.</p>
 </div>
 
 </div>
@@ -209,14 +282,240 @@ My research interests include astrophysical magnetic fields, exoplanetary atmosp
 </section>
 
 
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Digital Skills</h2>
+
+<ul>
+
+<li>Python</li>
+<li>Fortran</li>
+<li>MATLAB</li>
+<li>CLASS (Cosmic Linear Anisotropy Solving System)</li>
+<li>Linux Environment</li>
+<li>HTML</li>
+<li>LaTeX</li>
+
+</ul>
+
+</section>
+
+<!-- SOCIAL WORK -->
+
+<section id="social">
+
+<h2>Social Work & Extracurricular Roles</h2>
+
+<!-- Breakthrough Science Society -->
+
+<h3>Active Member — Breakthrough Science Society, Mumbai Chapter</h3>
+<p><i>February 2025 – Present</i></p>
+
+<p>
+Participate in science outreach initiatives, teaching young students in Dharavi, Mumbai and
+engaging in activities aimed at promoting scientific temper and curiosity among school students.
+</p>
+
+<div class="gallery">
+
+<img src="assets/images/outreach1.jpg">
+<img src="assets/images/outreach2.jpg">
+<img src="assets/images/outreach3.jpg">
+
+</div>
+
+<br><br>
+
+
+<!-- Cultural Affairs -->
+
+<h3>Coordinator — Cultural Affairs</h3>
+<p><i>January 2026 – Present</i></p>
+
+Responsible for organizing 
+<a href="https://www.youtube.com/@UMDAECEBSCultural" target="_blank">cultural activities</a> 
+and coordinating student participation in campus events and festivals.
+</p>
+
+<br><br>
+
+
+<!-- Cinematography Club -->
+
+<h3>Coordinator — Cinematography Club</h3>
+<p><i>February 2024 – Present</i></p>
+
+<p>
+Roles: cinematographer, director, actor and editor.
+Our team has produced several short films:
+</p>
+
+<ul>
+
+<li>
+<a href="https://www.youtube.com/watch?v=VDTfcdYJbaE&pp=ygUkY2FuIHlvdSBoZWFyIHRoZSBzaWxlbmNlIHVtIGRhZSBjZWJz" target="_blank">
+Can You Hear the Silence?
+</a>
+</li>
+
+<li>
+Masquerade
+</li>
+
+<li>
+<a href="https://www.youtube.com/watch?v=7wvZ1Miwv-8&pp=ygURYmxpbmQgY29ubmVjdGlvbnM%3D" target="_blank">
+Blind Connections – A Musical
+</a>
+</li>
+
+</ul>
+
+</section>
+<!-- COURSES -->
+
+<section id="courses">
+
+<h2>Courses Completed</h2>
+
+<ul>
+
+<li>
+<details>
+<summary><b>Classical Mechanics – I</b></summary>
+Newtonian mechanics, conservation laws, oscillations, and motion under central forces.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Classical Mechanics – II</b></summary>
+Lagrangian and Hamiltonian mechanics, variational principles, canonical transformations, and rigid body dynamics.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Electromagnetism</b></summary>
+Electrostatics, magnetostatics, Maxwell’s equations, and electromagnetic waves.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Electrodynamics</b></summary>
+Advanced Maxwell theory, electromagnetic radiation, relativistic electrodynamics, and potentials.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Modern Physics</b></summary>
+Foundations of quantum theory, relativity basics, atomic structure, and early quantum experiments.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Optics</b></summary>
+Geometrical and wave optics, interference, diffraction, polarization, and optical instruments.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Quantum Mechanics – I</b></summary>
+Wave mechanics, Schrödinger equation, operators, eigenvalue problems, and basic quantum systems.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Quantum Mechanics – II</b></summary>
+Angular momentum, perturbation theory, scattering theory, and approximation methods.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Statistical Physics</b></summary>
+Ensembles, thermodynamic potentials, phase transitions, and applications to physical systems.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Solid State Physics</b></summary>
+Crystal structures, lattice vibrations, band theory, and electronic properties of solids.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Nuclear Physics</b></summary>
+Nuclear structure, radioactive decay, nuclear reactions, and models of the nucleus.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Atomic and Molecular Physics</b></summary>
+Atomic spectra, angular momentum in atoms, molecular structure, and spectroscopy.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Mathematical Physics – I</b></summary>
+Linear algebra, vector calculus, complex analysis, and differential equations for physics applications.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Mathematical Physics – II</b></summary>
+Fourier analysis, special functions, partial differential equations, and advanced mathematical methods in physics.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Numerical Methods</b></summary>
+Computational techniques in Fortran.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Machine Learning & Artificial Intelligence</b></summary>
+Supervised and unsupervised learning methods including clustering, classification, decision trees, and basic neural network concepts.
+</details>
+</li>
+
+<li>
+<details>
+<summary><b>Electronics</b></summary>
+Analog and digital electronics including semiconductor devices, amplifiers, logic gates, and basic circuit design.
+</details>
+</li>
+
+</ul>
+
+</section>
+    
 <!-- CONTACT -->
 
 <section id="contact">
 
 <h2>Contact</h2>
 
-<p>Email: your_email_here</p>
+<p>Email: dhriti.kotwal@cbs.ac.in</p>
 
+<p>Contact: +91 94192-12387</p>
+
+<p>Current Address: Takshashila, UM-DAE CEBS, Mumbai, Maharashtra 400098, India</p>
+    
 <p>GitHub: github.com/dhritikotwal</p>
 
 </section>
@@ -231,8 +530,6 @@ My research interests include astrophysical magnetic fields, exoplanetary atmosp
 
 <script>
 
-/* INTERACTIVE BUTTON */
-
 function scrollToSection(){
 
 document.getElementById("projects").scrollIntoView({
@@ -241,8 +538,22 @@ behavior:"smooth"
 
 }
 
-</script>
+particlesJS("particles-js",{
+particles:{
+number:{value:120},
+color:{value:"#ffffff"},
+shape:{type:"circle"},
+size:{value:2},
+move:{enable:true,speed:0.5}
+},
+interactivity:{
+events:{
+onhover:{enable:true,mode:"repulse"}
+}
+}
+});
 
+</script>
 
 </body>
 </html>
